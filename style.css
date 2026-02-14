@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #050505; /* গভীর কালো ব্যাকগ্রাউন্ড */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+}
+
+/* বাটন কন্টেইনার */
+.power-wrapper {
+    width: 180px; 
+    height: 180px;
+    margin: 0 auto;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+/* বাইরের মোটা গোল সার্কেল */
+.outer-circle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 6px solid #00d4ff; /* মোটা নীল বর্ডার */
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+/* মাঝখানের পাওয়ার আইকন (SVG) */
+.power-svg {
+    width: 60%;
+    height: 60%;
+    fill: none;
+    stroke: #00d4ff;
+    stroke-width: 9;
+    stroke-linecap: round;
+    filter: drop-shadow(0 0 5px rgba(0, 212, 255, 0.8));
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+/* মাউস নিলে সার্কেল ও আইকন একসাথে উজ্জ্বল হবে */
+.power-wrapper:hover .outer-circle {
+    box-shadow: 0 0 30px #00d4ff, inset 0 0 15px #00d4ff;
+    border-width: 8px; /* হোভার করলে বর্ডার আরও একটু মোটা হবে */
+}
+
+.power-wrapper:hover .power-svg {
+    filter: drop-shadow(0 0 15px #00d4ff) drop-shadow(0 0 30px #00d4ff);
+}
+
+/* লেখা - আপনার চাহিদা মতো মাঝারি বড় (45px) এবং স্থির */
+.enter-text {
+    margin-top: 50px;
+    color: #00d4ff;
+    font-size: 45px; 
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+}
